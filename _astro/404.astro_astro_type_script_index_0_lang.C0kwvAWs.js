@@ -1,0 +1,1 @@
+var e=/\/entities\/([^/?#]+)/.exec(location.pathname),t=document.getElementById(`nf-q`);e&&t&&!t.value&&(t.value=decodeURIComponent(e[1]??``).replace(/-[0-9a-f]{4,8}$/,``).replace(/-/g,` `));

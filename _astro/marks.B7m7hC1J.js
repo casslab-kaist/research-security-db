@@ -1,0 +1,1 @@
+function e(e,t=!1){return`<span class="am" title="${e===`자동 번역`?`자동 번역된 문장입니다. 관리자 확인을 기다리고 있습니다.`:`수집기가 자동으로 작성한 기록입니다. 관리자 확인을 기다리고 있습니다.`}">${e}${t?``:`<span class="am-w"> · 관리자 확인 대기 중</span>`}</span>`}export{e as t};

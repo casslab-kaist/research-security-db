@@ -1,0 +1,1 @@
+function e(e){if(!e)return`[N]`;let[t,n,r]=e.slice(0,10).split(`-`);return n?r?`${t}. ${Number(n)}. ${Number(r)}.`:`${t}. ${Number(n)}.`:`${t}`}var t=e=>/[぀-ヿ]/.test(e)?`ja`:/[㐀-鿿]/.test(e)?`zh-Hant`:`en`;function n(e){return e.replace(/[&<>"]/g,e=>({"&":`&amp;`,"<":`&lt;`,">":`&gt;`,'"':`&quot;`})[e])}export{e as n,t as r,n as t};
