@@ -1,0 +1,1 @@
+var e=new Set([12,13,14,15,18,19,20]),t=(t,n=16,r=``)=>`<i class="i ic-${t}${n!==16&&e.has(n)?` s${n}`:``}${r?` `+r:``}" aria-hidden="true"></i>`,n=(t,n=16)=>`<i class="i rt-i ic-rt-${t}${n!==16&&e.has(n)?` s${n}`:``}" aria-hidden="true"></i>`;export{n,t};
