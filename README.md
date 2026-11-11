@@ -1,32 +1,20 @@
 # 연구안보DB
 
-Astro 정적 사이트. 기준 문서는 `CLAUDE.md`, 데이터 배치는 `docs/data-layout.md`, 원본과 달라진 점은 `docs/design-changes.md`.
+연구자가 협력하기 전에 상대 기관이 미국·캐나다·일본·대만의 연구안보 목록 20개 중 어디에 올라 있는지, 그 목록 때문에 어떤 제한이 생기는지를 공식 문서 근거와 함께 확인하는 웹사이트입니다.
 
-## 설치
+- 사이트: https://casslab-kaist.github.io/research-security-db
 
-```bash
-npm install
-```
+## 오류 신고와 문의
 
-캡처와 동작 확인 스크립트는 Playwright 브라우저가 필요하다 (`npx playwright install chromium firefox webkit`).
+이 저장소의 [Issues](https://github.com/casslab-kaist/research-security-db/issues)에 남겨 주십시오.
 
-## 명령
+- 공식 문서와 다른 내용, 잘못된 링크, 누락된 데이터: 사이트의 [오류 신고](https://casslab-kaist.github.io/research-security-db/report/) 화면에서 신고할 페이지와 내용을 적으면 이슈 글이 채워집니다.
+- 사이트 이용, 데이터, 기능에 관한 문의: [새 이슈](https://github.com/casslab-kaist/research-security-db/issues/new)로 남겨 주십시오. 답변도 이슈에 답니다.
 
-```bash
-npm run dev      # 개발 서버
-npm run build    # 타입·스키마 검사 후 dist/에 정적 출력
-npm run seed     # design/fixtures + sample.json → data/*.json 임시 데이터 다시 만들기
-npm run shots    # 1440px 라이트·다크 캡처 → shots/ (build 뒤)
-node scripts/check-cites.mjs   # 근거 카드, 변경 행, 검색, 등재 기관, 비교 방식을 Chromium·Firefox·WebKit에서 확인 (build 뒤)
-node scripts/check-links.mjs   # dist/의 사이트 안 링크와 앵커 확인 (build 뒤)
-node scripts/check-theme.mjs   # 라이트·다크 전환 버튼을 세 엔진에서 확인 (build 뒤)
-python3 scripts/compare.py     # 원본 PNG와 캡처를 나란히 → shots/compare/
-```
+확인 후 수정한 내용은 사이트의 [사이트 수정 기록](https://casslab-kaist.github.io/research-security-db/changes/site/)에 남깁니다.
 
-## 배포 (GitHub Pages)
+## 이 저장소
 
-- 주소: https://casslab-kaist.github.io/research-security-db (`astro.config.mjs`의 `site`, `base`)
-- `npm run build` 뒤 `dist/`를 그대로 올린다. `public/.nojekyll`이 들어 있어 `_astro/` 폴더도 그대로 서비스된다.
-- 개발 서버 주소도 base 아래다: http://localhost:4321/research-security-db/
-- 사이트 안 링크는 꼭 `src/lib/url.ts`의 `url('/lists/el')`를 거친다. 설명 글(HTML) 안의 링크는 `rich()`와 `withBase()`가 붙인다.
-  데이터에는 base 없는 경로(`/lists/el`)를 적는다. `node scripts/check-links.mjs`가 base가 빠진 링크를 찾아 준다.
+이 저장소에는 사이트의 배포본만 있습니다. `gh-pages` 가지에 빌드 결과(HTML, CSS, 스크립트, 검색 색인, JSON)가 올라가며, 배포할 때마다 통째로 바뀝니다. 사이트의 소스와 수집기는 이 저장소에 없습니다.
+
+목록은 매일 06:00(한국 시각)에 공식 원문에서 다시 수집해 반영합니다.
