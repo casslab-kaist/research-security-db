@@ -1,0 +1,1 @@
+var e=`/research-security-db`.replace(/\/+$/,``);function t(t){return!t.startsWith(`/`)||t.startsWith(`//`)||e&&(t===e||t.startsWith(e+`/`)||t.startsWith(e+`?`)||t.startsWith(e+`#`))?t:e+t}export{t};
